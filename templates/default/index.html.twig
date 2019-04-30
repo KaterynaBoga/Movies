@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Movies{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Popular Movies</h1>
+    {%- for movie in popular -%}
+        <a href="{{ path('detail', {'id': movie.id}) }}"><img src="http://image.tmdb.org/t/p/w185{{ movie.posterPath }}"></a>
+    {%- endfor -%}
+
+    <h1>TOP rated Movies</h1>
+    {% for movie in rated %}
+        <a href="{{ path('detail', {'id': movie.id}) }}">
+            <img src="http://image.tmdb.org/t/p/w185{{ movie.posterPath }}">
+        </a>
+    {% endfor %}
+</div>
+{% endblock %}

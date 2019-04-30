@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Movies{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1> <i class="fas fa-long-arrow-alt-left"></i>  Movie detail</h1>
+        <p class="title">{{ movie.original_title }}</p>
+        <div class="movie-detail">
+            <div class="info">
+                <div class="image">
+                    <img src="http://image.tmdb.org/t/p/w185{{ movie.poster_path }}">
+                </div>
+                <div class="date">
+                    <p>{{ movie.release_date|date('Y') }}</p>
+                    <p>{{ movie.runtime }}</p>
+                    <p>{{ movie.vote_average }} / 10</p>
+                    <button>Marks in favorite</button>
+                </div>
+            </div>
+
+            <p>{{ movie.overview }}</p>
+
+        </div>
+    </div>
+{% endblock %}
